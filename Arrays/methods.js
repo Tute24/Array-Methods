@@ -145,7 +145,7 @@ console.log(teams.fill("Cruzeiro",2,4)) //Modifica o array original e substitui 
 
 let toBeSliced = [3,8,33,21,14,19,76]
 
-let sliced = toBeSliced.slice(3,6)
+let sliced = toBeSliced.slice(2)
 
 console.log(sliced) //Como o próprio nome já diz, ele corta o array de acordo com os indexes especificados. O primeiro argumento é a partir de qual index o array será cortado, e o segundo é o limite de corte (o array será conrtado até o index2-1)
 
@@ -153,10 +153,40 @@ console.log(sliced) //Como o próprio nome já diz, ele corta o array de acordo 
 
 let aarr = ["Jan","Feb","Mar","Apr"]
 
-aarr.splice(1,2,"Arthur")
+aarr.splice(1,1)
 
 console.log(aarr)//O splice remove ou adiciona elementos no array em um index especificado. O primeiro argumento do método é o index a partir de qual será feita a operação. O segundo argumento indica o número de elementos, a partir do elemento do index especificado no primeiro argumento, que serão removidos. O terceiro argumento é o elemento que será adicionado. Nesse método, o array original é modificado. Então, para o exemplo feito acima, iríamos remover 2 elementos a partir do index 1 de aarr ("Feb" e "Mar"), e adicionar, no index 1, o elemento "Arthur". Para não remover nenhum elemento, o segundo argumento é 0.
 
+//-------Método reverse
 
+let count = [4,9,14,20,31]
+count.reverse()
+console.log(count)//muda a ordem do array original e escreve ele de trás pra frente
+
+//-------Método from
+
+let str = '371'
+
+let arrayNumb = Array.from(str).map(element => Number(element))
+ console.log (arrayNumb)//transforma uma string em um array utilizando o método global Array
+
+//-------Método valueOf()
+
+let equipes = ['Browns',"Ravens","Steelers","Bengals"]
+
+let valueEkips = equipes.valueOf()
+
+valueEkips.push("tute")
+
+console.log({valueEkips,equipes})//apenas retorna o próprio array. Se alterarmos o valueEkips, equipes também será alterado
+
+//-------Método entries
+
+let teamEntries = equipes.entries()
+let teamEntriesCopy = [...teamEntries]
+
+console.log(teamEntriesCopy)//vai retornar os pares key, value (index,elemento , nesse caso) do array
+
+////-------Método keys() e values() => são um desmebramento da entries() => keys() retorna o index pra cada elemento e values() retorna cada elemento
 
 
